@@ -1,0 +1,597 @@
+/*------------------------------------*
+ * VARIABLES Y CONFIGURACIÓN GLOBAL
+ *------------------------------------*/
+:root {
+  /* Paleta de colores */
+  --color-primary: #191970; /* Azul Profundo/Medianoche - color principal del sitio */
+  --color-secondary: #6a0dad; /* Púrpura Amatista - color secundario para acentos */
+  --color-background: #ffffff; /* Blanco Puro - fondo principal de la página */
+  --color-background-alt: #f7f7f9; /* Gris muy claro para secciones alternativas */
+  --color-text: #333333; /* Gris oscuro para texto, mejor legibilidad */
+  --color-text-light: #ffffff; /* Texto blanco para fondos oscuros */
+  --color-accent: #daa520; /* Oro Suave - color de botones y elementos destacados */
+  --color-accent-hover: #c79a1e; /* Oro más oscuro para efecto hover en botones */
+  --color-border: #e0e0e0; /* Color gris claro para bordes */
+
+  /* Tipografía */
+  --font-primary: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal para el texto */
+  --font-headings: "Georgia", "Times New Roman", Times, serif; /* Fuente para títulos y encabezados */
+
+  /* Transiciones y Sombras */
+  /* Se ha eliminado 'all' de la variable --transition-smooth
+     Ahora las transiciones se definirán específicamente en cada selector. */
+  --transition-duration: 0.3s; /* Duración estándar para transiciones */
+  --transition-timing-function: cubic-bezier(
+    0.25,
+    0.8,
+    0.25,
+    1
+  ); /* Función de temporización estándar */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Sombra pequeña y sutil */
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Sombra mediana para elementos destacados */
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra grande para efectos hover */
+  --border-radius: 12px; /* Radio de esquinas redondeadas estándar */
+}
+
+/* Reset básico y configuración del box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total del elemento */
+  margin: 0; /* Elimina márgenes por defecto */
+  padding: 0; /* Elimina padding por defecto */
+}
+
+/* Configuración del HTML y Body para un desplazamiento suave y mejor renderizado */
+html {
+  scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces ancla */
+  scroll-padding-top: 80px; /* Ajuste para el header fijo - evita que el contenido se oculte */
+}
+
+body {
+  font-family: var(
+    --font-primary
+  ); /* Aplica la fuente principal a todo el documento */
+  line-height: 1.7; /* Espaciado entre líneas para mejor legibilidad */
+  color: var(--color-text); /* Color de texto por defecto */
+  background-color: var(--color-background); /* Color de fondo por defecto */
+  -webkit-font-smoothing: antialiased; /* Suaviza la fuente en navegadores WebKit */
+  -moz-osx-font-smoothing: grayscale; /* Suaviza la fuente en Firefox en macOS */
+}
+
+/* Estilos para títulos y secciones */
+.section-title {
+  font-family: var(--font-headings); /* Usa la fuente para títulos */
+  font-size: clamp(
+    2rem,
+    5vw,
+    2.75rem
+  ); /* Tamaño responsivo: mínimo 2rem, máximo 2.75rem */
+  color: var(--color-primary); /* Color azul para títulos principales */
+  text-align: center; /* Centra el texto horizontalmente */
+  margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+.section-subtitle {
+  font-size: clamp(
+    1rem,
+    2.5vw,
+    1.15rem
+  ); /* Tamaño responsivo para subtítulos */
+  text-align: center; /* Centra el texto */
+  max-width: 600px; /* Limita el ancho máximo para mejor legibilidad */
+  margin: 0 auto 3rem auto; /* Centra horizontalmente y añade margen inferior */
+  color: #666; /* Color gris para subtítulos */
+}
+
+.section-header {
+  margin-bottom: 3rem; /* Espaciado inferior para separar del contenido */
+}
+
+/*------------------------------------*
+ * HEADER
+ *------------------------------------*/
+.header {
+  position: sticky; /* Se mantiene fijo en la parte superior al hacer scroll */
+  top: 0; /* Posición en la parte superior */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.85
+  ); /* Fondo blanco semi-transparente */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque del fondo */
+  -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+  box-shadow: var(--shadow-sm); /* Sombra sutil */
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.header__nav {
+  display: flex; /* Distribuye los elementos en línea */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 0 1rem; /* Padding horizontal */
+  height: 70px; /* Altura fija del header */
+}
+
+.header__menu {
+  display: flex; /* Distribuye los elementos del menú en línea */
+  align-items: center; /* Centra verticalmente */
+  list-style: none; /* Elimina las viñetas de la lista */
+  gap: 0.5rem; /* Espaciado entre elementos del menú */
+}
+
+.header__menu-link {
+  display: block; /* Hace que el enlace ocupe todo el área clickeable */
+  padding: 0.75rem 1rem; /* Espaciado interno del enlace */
+  font-weight: 600; /* Peso de fuente semi-negrita */
+  font-size: 0.95rem; /* Tamaño de fuente ligeramente menor */
+  color: var(--color-primary); /* Color azul para los enlaces */
+  text-decoration: none; /* Elimina el subrayado */
+  border-radius: 8px; /* Esquinas redondeadas */
+  /* Transición específica para las propiedades que cambian */
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    color var(--transition-duration) var(--transition-timing-function),
+    box-shadow var(--transition-duration) var(--transition-timing-function);
+  position: relative; /* Necesario para elementos absolutos internos */
+}
+
+/* Estado activo del link de navegación */
+.header__menu-link--active,
+.header__menu-link:hover {
+  background-color: var(--color-primary); /* Fondo azul al pasar el cursor */
+  color: var(
+    --color-text-light
+  ) !important; /* Texto blanco - !important sobreescribe otros estilos */
+  box-shadow: var(--shadow-md); /* Sombra mediana para efecto de elevación */
+}
+
+/* Dropdown de Libros */
+.header__menu-item--dropdown {
+  position: relative; /* Necesario para posicionar el dropdown */
+}
+
+.header__dropdown-arrow {
+  font-size: 0.7rem; /* Tamaño pequeño para la flecha */
+  margin-left: 0.3rem; /* Separación a la izquierda de la flecha */
+  transition: transform 0.2s ease; /* Transición suave para la rotación */
+}
+
+.header__menu-link[aria-expanded="true"] .header__dropdown-arrow {
+  transform: rotate(
+    180deg
+  ); /* Rota la flecha cuando el dropdown está abierto */
+}
+
+.header__submenu {
+  position: absolute; /* Posición absoluta respecto al elemento padre */
+  top: calc(
+    100% + 10px
+  ); /* Se posiciona debajo del elemento padre con 10px de separación */
+  left: 50%; /* Se centra horizontalmente */
+  transform: translateX(-50%); /* Ajusta la posición para centrar exactamente */
+  background-color: var(--color-background); /* Fondo blanco */
+  border-radius: var(--border-radius); /* Esquinas redondeadas */
+  box-shadow: var(--shadow-lg); /* Sombra grande para destacar */
+  list-style: none; /* Elimina las viñetas */
+  min-width: 200px; /* Ancho mínimo del dropdown */
+  z-index: 1001; /* Asegura que esté por encima del header */
+  padding: 0.5rem; /* Espaciado interno */
+  border: 1px solid var(--color-border); /* Borde gris claro */
+  opacity: 0; /* Inicialmente invisible */
+  visibility: hidden; /* Inicialmente oculto */
+  /* Transiciones específicas para el submenú */
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+}
+
+.header__menu-link[aria-expanded="true"] + .header__submenu {
+  opacity: 1; /* Hace visible el dropdown */
+  visibility: visible; /* Hace el dropdown accesible */
+  transform: translateX(-50%) translateY(-5px); /* Ajusta la posición con un ligero desplazamiento */
+}
+
+.header__submenu-link {
+  display: block; /* Hace que el enlace ocupe toda la línea */
+  padding: 0.75rem 1rem; /* Espaciado interno */
+  color: var(--color-text); /* Color de texto normal */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 8px; /* Esquinas redondeadas */
+  /* Transición específica para las propiedades que cambian */
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    color var(--transition-duration) var(--transition-timing-function);
+  font-weight: 650;
+}
+
+.header__submenu-link:hover {
+  background-color: var(
+    --color-background-alt
+  ); /* Fondo gris claro al pasar el cursor */
+  color: var(--color-secondary); /* Color púrpura al pasar el cursor */
+}
+
+/*------------------------------------*
+ * SECCIÓN HERO
+ *------------------------------------*/
+.hero {
+  position: relative; /* Necesario para posicionar el fondo */
+  display: flex; /* Distribuye el contenido de forma flexible */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  min-height: 100vh; /* Altura mínima de toda la pantalla */
+  padding: 1rem; /* Espaciado interno */
+  color: var(--color-text-light); /* Texto blanco */
+  text-align: center; /* Centra el texto */
+  overflow: hidden; /* Oculta el desbordamiento del fondo animado */
+}
+
+.hero__background {
+  position: absolute; /* Posición absoluta respecto al contenedor hero */
+  top: 0; /* Posición en la parte superior */
+  left: 0; /* Posición en la parte izquierda */
+  width: 100%; /* Ocupa todo el ancho */
+  height: 100%; /* Ocupa toda la altura */
+  background: linear-gradient(rgba(25, 25, 112, 0.7), rgba(106, 13, 173, 0.5)),
+    url("../Media/index-main-bg.jpg") no-repeat center center/cover; /* Gradiente sobre imagen de fondo */
+  z-index: -1; /* Se coloca detrás del contenido */
+  animation: zoom-in 20s ease-in-out infinite alternate; /* Animación de zoom que se repite */
+}
+
+@keyframes zoom-in {
+  from {
+    transform: scale(1); /* Tamaño normal al inicio */
+  }
+  to {
+    transform: scale(1.1); /* Aumenta el tamaño al final */
+  }
+}
+
+.hero__content {
+  max-width: 800px; /* Limita el ancho máximo del contenido */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra del texto para mejor legibilidad */
+  animation: fade-in-up 1s ease-out; /* Animación de entrada del contenido */
+}
+
+.hero__title {
+  font-size: clamp(
+    3rem,
+    8vw,
+    5.5rem
+  ); /* Tamaño responsivo muy grande para el título principal */
+  font-weight: 700; /* Peso de fuente muy negrita */
+  line-height: 1.1; /* Espaciado entre líneas ajustado */
+  color: var(--color-text-light); /* Color blanco */
+  margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.hero__subtitle {
+  font-size: clamp(
+    1.2rem,
+    4vw,
+    1.75rem
+  ); /* Tamaño responsivo para el subtítulo */
+  font-weight: 500; /* Peso de fuente medio */
+  opacity: 0.9; /* Ligeramente transparente */
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0; /* Invisible al inicio */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+  }
+  to {
+    opacity: 1; /* Completamente visible */
+    transform: translateY(0); /* Posición normal */
+  }
+}
+
+/*------------------------------------*
+ * SECCIÓN LIBROS
+ *------------------------------------*/
+.books {
+  padding: 4rem 1rem; /* Espaciado interno amplio */
+  background-color: var(--color-background-alt); /* Fondo gris claro */
+}
+
+.books__container {
+  display: grid; /* Usa CSS Grid para la disposición */
+  grid-template-columns: 1fr; /* Una columna por defecto */
+  gap: 2rem; /* Espaciado entre elementos */
+  max-width: 1400px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+.books__testament {
+  background-color: var(--color-background); /* Fondo blanco */
+  border-radius: var(--border-radius); /* Esquinas redondeadas */
+  padding: 2rem; /* Espaciado interno */
+  box-shadow: var(--shadow-md); /* Sombra mediana */
+}
+
+.books__testament-title {
+  font-family: var(--font-headings); /* Fuente para títulos */
+  font-size: 1.75rem; /* Tamaño de fuente grande */
+  text-align: center; /* Centra el texto */
+  margin-bottom: 2rem; /* Espaciado inferior */
+  padding-bottom: 0.5rem; /* Espaciado interno inferior */
+  border-bottom: 2px solid var(--color-border); /* Línea inferior */
+  color: var(--color-secondary); /* Color púrpura */
+}
+
+.books__list {
+  list-style: none; /* Elimina las viñetas */
+  display: grid; /* Usa CSS Grid */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  ); /* Columnas automáticas con ancho mínimo */
+  gap: 1rem; /* Espaciado entre tarjetas */
+}
+
+.book-card {
+  border: 1px solid var(--color-border); /* Borde gris claro */
+  border-radius: 8px; /* Esquinas ligeramente redondeadas */
+  padding: 1.5rem; /* Espaciado interno */
+  display: flex; /* Usa flexbox */
+  flex-direction: column; /* Elementos en columna */
+  /* Transición específica para las propiedades que cambian */
+  transition: transform var(--transition-duration)
+      var(--transition-timing-function),
+    box-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+.book-card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta al pasar el cursor */
+  box-shadow: var(--shadow-lg); /* Sombra grande para efecto de elevación */
+}
+
+.book-card__title {
+  font-size: 1.2rem; /* Tamaño de fuente mediano */
+  color: var(--color-primary); /* Color azul */
+  margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+.book-card__description {
+  font-size: 0.9rem; /* Tamaño de fuente pequeño */
+  color: #555; /* Color gris medio */
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  margin-bottom: 1rem; /* Espaciado inferior */
+}
+
+.book-card__link {
+  display: block; /* Ocupa toda la línea */
+  text-align: center; /* Centra el texto */
+  padding: 0.75rem; /* Espaciado interno */
+  background-color: var(--color-accent); /* Fondo dorado */
+  color: var(--color-text-light); /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 600; /* Peso de fuente semi-negrita */
+  border-radius: 8px; /* Esquinas redondeadas */
+  /* Transición específica para las propiedades que cambian */
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    box-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+.book-card__link:hover {
+  background-color: var(--color-accent-hover); /* Fondo dorado más oscuro */
+  box-shadow: var(--shadow-md); /* Sombra mediana */
+}
+
+.books__attribution {
+  text-align: center; /* Centra el texto */
+  margin-top: 3rem; /* Espaciado superior */
+  font-size: 0.9rem; /* Tamaño de fuente pequeño */
+  color: #777; /* Color gris claro */
+}
+
+.books__attribution a {
+  color: var(--color-secondary); /* Color púrpura para enlaces */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 600; /* Peso de fuente semi-negrita */
+}
+
+.books__attribution a:hover {
+  text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+/*------------------------------------*
+ * COMPONENTE TARJETA REUTILIZABLE
+ *------------------------------------*/
+.praises,
+.sermons {
+  padding: 4rem 1rem; /* Espaciado interno amplio */
+}
+.sermons {
+  background-color: var(
+    --color-background-alt
+  ); /* Fondo gris claro para diferenciación */
+}
+
+.card-grid {
+  display: grid; /* Usa CSS Grid */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Columnas que se ajustan automáticamente */
+  gap: 2rem; /* Espaciado entre tarjetas */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+.card {
+  padding: 1.5rem; /* Espaciado interno */
+  background-color: var(--color-background); /* Fondo blanco */
+  border-radius: var(--border-radius); /* Esquinas redondeadas */
+  box-shadow: var(--shadow-md); /* Sombra mediana */
+  overflow: hidden; /* Oculta el desbordamiento */
+  display: flex; /* Usa flexbox */
+  flex-direction: column; /* Elementos en columna */
+  /* Transición específica para las propiedades que cambian */
+  transition: transform var(--transition-duration)
+      var(--transition-timing-function),
+    box-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+.card:hover {
+  transform: translateY(-8px); /* Eleva la tarjeta más que las book-cards */
+  box-shadow: var(--shadow-lg); /* Sombra grande */
+}
+
+.card__title {
+  font-size: 1.25rem; /* Tamaño de fuente mediano-grande */
+  font-family: var(--font-headings); /* Fuente para títulos */
+  color: var(--color-primary); /* Color azul */
+  margin-bottom: 0.75rem; /* Espaciado inferior */
+}
+
+.card__description {
+  font-size: 0.95rem; /* Tamaño de fuente ligeramente menor */
+  color: #555; /* Color gris medio */
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  margin-bottom: 1.5rem; /* Espaciado inferior */
+}
+
+.card__link {
+  display: block; /* Ocupa toda la línea */
+  text-align: center; /* Centra el texto */
+  padding: 0.75rem; /* Espaciado interno */
+  margin: 1.5rem; /* Se aplica margen en lugar de padding al contenedor */
+  margin-top: auto; /* Empuja el botón hacia abajo */
+  background-color: var(--color-accent); /* Fondo dorado */
+  color: var(--color-text-light); /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 600; /* Peso de fuente semi-negrita */
+  border-radius: 8px; /* Esquinas redondeadas */
+  /* Transición específica para las propiedades que cambian */
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    box-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+.card__link:hover {
+  background-color: var(--color-accent-hover); /* Fondo dorado más oscuro */
+  box-shadow: var(--shadow-md); /* Sombra mediana */
+}
+
+/*------------------------------------*
+ * SECCIÓN "ACERCA DE"
+ *------------------------------------*/
+.about {
+  padding: 4rem 1rem; /* Espaciado interno amplio */
+  background-color: var(--color-primary); /* Fondo azul */
+  color: var(--color-text-light); /* Texto blanco */
+}
+
+.about__container {
+  display: grid; /* Usa CSS Grid */
+  grid-template-columns: 1fr; /* Una columna por defecto */
+  gap: 3rem; /* Espaciado entre elementos */
+  max-width: 1100px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+.about__content .section-title--light {
+  color: var(--color-text-light); /* Texto blanco para títulos */
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.about__content p {
+  margin-bottom: 1rem; /* Espaciado inferior entre párrafos */
+  font-size: 1.05rem; /* Tamaño de fuente ligeramente mayor */
+  opacity: 0.9; /* Ligeramente transparente */
+}
+
+.about__image-container {
+  display: flex; /* Usa flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+}
+
+.about__image {
+  max-width: 100%; /* No excede el ancho del contenedor */
+  width: 350px; /* Ancho específico */
+  height: 350px; /* Altura específica */
+  border-radius: 50%; /* Hace la imagen circular */
+  object-fit: cover; /* Recorta la imagen para mantener proporciones */
+  box-shadow: 0 0 30px rgba(218, 165, 32, 0.5); /* Sombra dorada alrededor */
+  border: 5px solid var(--color-accent); /* Borde dorado */
+}
+
+/*------------------------------------*
+ * FOOTER
+ *------------------------------------*/
+.footer {
+  padding: 2rem 1rem; /* Espaciado interno */
+  background-color: #111; /* Fondo negro */
+  color: #aaa; /* Texto gris claro */
+  text-align: center; /* Centra el texto */
+  font-size: 0.9rem; /* Tamaño de fuente pequeño */
+}
+
+.footer__copyright {
+  margin-bottom: 0.5rem; /* Espaciado inferior */
+}
+
+.footer__credits {
+  color: #777; /* Color gris más claro */
+}
+
+/*------------------------------------*
+ * MEDIA QUERIES PARA RESPONSIVIDAD
+ *------------------------------------*/
+@media (min-width: 768px) {
+  .books__container {
+    grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas medianas */
+  }
+  .about__container {
+    grid-template-columns: 2fr 1fr; /* Dos columnas: contenido más ancho, imagen más estrecha */
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 60px; /* Reduce el padding superior para pantallas pequeñas */
+  }
+  .header__nav {
+    height: 85.25px;
+  }
+  .header__menu {
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en múltiples líneas */
+    justify-content: center; /* Centra los elementos */
+    gap: 0.2rem; /* Reduce el espaciado entre elementos */
+  }
+  .header__menu-link {
+    padding: 0.5rem 0.75rem; /* Reduce el padding en móviles */
+    font-size: 0.9rem; /* Reduce el tamaño de fuente */
+  }
+}
+
+/* Accesibilidad: Respeto por las preferencias del usuario */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto; /* Desactiva el scroll suave si el usuario prefiere menos movimiento */
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important; /* Reduce drásticamente las animaciones */
+    animation-iteration-count: 1 !important; /* Ejecuta las animaciones solo una vez */
+    transition-duration: 0.01ms !important; /* Reduce drásticamente las transiciones */
+    scroll-behavior: auto !important; /* Desactiva el scroll suave */
+  }
+}
+
+/* Estilos de enfoque para accesibilidad */
+*:focus-visible {
+  outline: 3px solid var(--color-secondary); /* Contorno púrpura cuando se enfoca con teclado */
+  outline-offset: 3px; /* Separación del contorno */
+  border-radius: 4px; /* Esquinas redondeadas del contorno */
+}

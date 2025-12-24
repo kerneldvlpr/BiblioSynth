@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos para SEO y compatibilidad -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BiblioSynth - Explora la Biblia, encuentra sermones inspiradores, alabanzas y recursos cristianos. Tu portal bíblico digital para crecer en la fe."
+    />
+    <meta
+      name="keywords"
+      content="Biblia, BiblioSynth, estudio bíblico, sermones, alabanzas, cristianismo, Dios, Jesús, fe"
+    />
+    <meta name="author" content="Kernel Philosopher" />
+    <meta name="robots" content="index, follow" />
+    <link
+      rel="canonical"
+      href="https://kernelphilosopher.github.io/BiblioSynth/"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://kernelphilosopher.github.io/BiblioSynth"
+    />
+    <meta
+      property="og:title"
+      content="BiblioSynth: Tu herramienta para la Síntesis de Información bíblica"
+    />
+    <meta
+      property="og:description"
+      content="Explora BiblioSynth, una herramienta innovadora para organizar, analizar y sintetizar información académica y bíblica y de investigación de manera eficiente."
+    />
+    <meta property="og:image" content="Media/index-about-icon.jpg" />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://kernelphilosopher.github.io/BiblioSynth"
+    />
+    <meta
+      property="twitter:title"
+      content="BiblioSynth: Sintetiza tu investigación bíblica fácilmente"
+    />
+    <meta
+      property="twitter:description"
+      content="Organiza, analiza y sintetiza información académica y bíblica con BiblioSynth."
+    />
+    <meta property="twitter:image" content="Media/index-about-icon.jpg" />
+
+    <title>BiblioSynth - Tu Portal Bíblico Digital</title>
+
+    <!-- Hojas de estilo - Favicon - Apple Touch -->
+    <link rel="stylesheet" href="Styles/main.css" />
+    <link rel="icon" type="image/x-icon" href="Media/index-favicon-icon.ico" />
+    <link
+      rel="apple-touch-icon"
+      href="Media/index-about-icon-apple-touch.png"
+    />
+
+    <!-- Preconexión para mejorar la carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <!-- Encabezado fijo con navegación principal -->
+    <header class="header">
+      <nav class="header__nav" aria-label="Navegación principal">
+        <ul class="header__menu">
+          <li class="header__menu-item">
+            <a
+              href="#home"
+              class="header__menu-link"
+              title="Ir a la sección de Inicio"
+              >Inicio</a
+            >
+          </li>
+          <li class="header__menu-item header__menu-item--dropdown">
+            <a
+              href="#books"
+              class="header__menu-link"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="submenu-books"
+              title="Explorar libros de la Biblia"
+            >
+              Libros
+              <span class="header__dropdown-arrow" aria-hidden="true">▼</span>
+            </a>
+            <ul class="header__submenu" id="submenu-books">
+              <li>
+                <a
+                  href="#old-testament"
+                  class="header__submenu-link"
+                  title="Explorar el Antiguo Testamento"
+                  >Antiguo Testamento</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#new-testament"
+                  class="header__submenu-link"
+                  title="Explorar el Nuevo Testamento"
+                  >Nuevo Testamento</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="header__menu-item">
+            <a
+              href="#praises"
+              class="header__menu-link"
+              title="Ir a la sección de Alabanzas"
+              >Alabanzas</a
+            >
+          </li>
+          <li class="header__menu-item">
+            <a
+              href="#sermons"
+              class="header__menu-link"
+              title="Ir a la sección de Sermones"
+              >Sermones</a
+            >
+          </li>
+          <li class="header__menu-item">
+            <a
+              href="#about"
+              class="header__menu-link"
+              title="Conocer más sobre BiblioSynth"
+              >Acerca De</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Sección de Inicio (Hero) -->
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div
+          class="hero__background"
+          role="img"
+          aria-label="Cielo estrellado evocando la creación"
+        ></div>
+        <div class="hero__content">
+          <h1 id="hero-title" class="hero__title">
+            BiblioSynth: Tu Portal Bíblico Digital
+          </h1>
+          <p class="hero__subtitle">
+            Acompañándote en tu caminar con la Palabra.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sección de Libros Bíblicos -->
+      <section id="books" class="books" aria-labelledby="books-title">
+        <h2 id="books-title" class="section-title">Libros de la Biblia</h2>
+        <div class="books__container">
+          <article
+            class="books__testament"
+            id="old-testament"
+            aria-labelledby="old-testament-title"
+          >
+            <h3 id="old-testament-title" class="books__testament-title">
+              Antiguo Testamento
+            </h3>
+            <ul class="books__list">
+              <!-- Los elementos <li> de los libros del Antiguo Testamento -->
+              <li class="book-card">
+                <h4 class="book-card__title">Génesis</h4>
+                <p class="book-card__description">
+                  El origen del universo, la humanidad y el plan redentor de
+                  Dios.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Génesis"
+                  aria-label="Leer Génesis en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Éxodo</h4>
+                <p class="book-card__description">
+                  La liberación de Israel de la esclavitud en Egipto y la
+                  entrega de la Ley en el Sinaí.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Éxodo"
+                  aria-label="Leer Éxodo en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Levítico</h4>
+                <p class="book-card__description">
+                  Leyes y rituales para la adoración y la vida santa del pueblo
+                  de Israel.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Levítico"
+                  aria-label="Leer Levítico en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Números</h4>
+                <p class="book-card__description">
+                  El viaje de Israel por el desierto, el censo del pueblo y sus
+                  rebeliones.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Números"
+                  aria-label="Leer Números en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Deuteronomio</h4>
+                <p class="book-card__description">
+                  Discursos de Moisés que reafirman la ley antes de entrar a la
+                  Tierra Prometida.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Deuteronomio"
+                  aria-label="Leer Deuteronomio en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Josué</h4>
+                <p class="book-card__description">
+                  La conquista de la Tierra Prometida bajo el liderazgo de
+                  Josué.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Josué"
+                  aria-label="Leer Josué en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Jueces</h4>
+                <p class="book-card__description">
+                  El ciclo de desobediencia, opresión y liberación de Israel a
+                  través de líderes.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Jueces"
+                  aria-label="Leer Jueces en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Rut</h4>
+                <p class="book-card__description">
+                  Una historia de lealtad, amor y redención en la genealogía del
+                  rey David.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Rut"
+                  aria-label="Leer Rut en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">1 Samuel</h4>
+                <p class="book-card__description">
+                  La transición de Israel a una monarquía con el profeta Samuel
+                  y el rey Saúl.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="1 Samuel"
+                  aria-label="Leer 1 Samuel en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">2 Samuel</h4>
+                <p class="book-card__description">
+                  El reinado del rey David, sus grandes triunfos y sus profundos
+                  fracasos.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="2 Samuel"
+                  aria-label="Leer 2 Samuel en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">1 Reyes</h4>
+                <p class="book-card__description">
+                  La historia de la monarquía desde Salomón hasta la división
+                  del reino.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="1 Reyes"
+                  aria-label="Leer 1 Reyes en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">2 Reyes</h4>
+                <p class="book-card__description">
+                  La historia de los reinos divididos de Israel y Judá hasta su
+                  exilio.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="2 Reyes"
+                  aria-label="Leer 2 Reyes en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">1 Crónicas</h4>
+                <p class="book-card__description">
+                  Una genealogía y recuento de la historia de Israel, centrado
+                  en David.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="1 Crónicas"
+                  aria-label="Leer 1 Crónicas en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">2 Crónicas</h4>
+                <p class="book-card__description">
+                  La historia del reino de Judá desde Salomón hasta el exilio
+                  babilónico.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="2 Crónicas"
+                  aria-label="Leer 2 Crónicas en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Esdras</h4>
+                <p class="book-card__description">
+                  El regreso de los exiliados a Jerusalén y la reconstrucción
+                  del Templo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Esdras"
+                  aria-label="Leer Esdras en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Nehemías</h4>
+                <p class="book-card__description">
+                  La reconstrucción de los muros de Jerusalén bajo el liderazgo
+                  de Nehemías.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Nehemías"
+                  aria-label="Leer Nehemías en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Ester</h4>
+                <p class="book-card__description">
+                  Una reina judía que salva a su pueblo del genocidio en el
+                  imperio persa.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Ester"
+                  aria-label="Leer Ester en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Job</h4>
+                <p class="book-card__description">
+                  Una profunda exploración del sufrimiento, la justicia y la
+                  soberanía de Dios.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Job"
+                  aria-label="Leer Job en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Salmos</h4>
+                <p class="book-card__description">
+                  Una colección de 150 cánticos, oraciones y poemas para la
+                  adoración.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Salmos"
+                  aria-label="Leer Salmos en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Proverbios</h4>
+                <p class="book-card__description">
+                  Una colección de dichos sabios para la vida práctica y
+                  piadosa.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Proverbios"
+                  aria-label="Leer Proverbios en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Eclesiastés</h4>
+                <p class="book-card__description">
+                  Una reflexión sobre el significado de la vida y la búsqueda de
+                  la felicidad.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Eclesiastés"
+                  aria-label="Leer Eclesiastés en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Cantar de los Cantares</h4>
+                <p class="book-card__description">
+                  Un poema que celebra la belleza y la intimidad del amor
+                  conyugal.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Cantar de los Cantares"
+                  aria-label="Leer Cantar de los Cantares en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Isaías</h4>
+                <p class="book-card__description">
+                  Profecías sobre el juicio, la restauración de Israel y la
+                  venida del Mesías.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Isaías"
+                  aria-label="Leer Isaías en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Jeremías</h4>
+                <p class="book-card__description">
+                  El llamado de Dios a Judá al arrepentimiento antes del exilio
+                  babilónico.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Jeremías"
+                  aria-label="Leer Jeremías en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Lamentaciones</h4>
+                <p class="book-card__description">
+                  Un lamento poético por la destrucción de Jerusalén y el
+                  Templo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Lamentaciones"
+                  aria-label="Leer Lamentaciones en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Ezequiel</h4>
+                <p class="book-card__description">
+                  Profecías dadas durante el exilio sobre la soberanía y gloria
+                  de Dios.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Ezequiel"
+                  aria-label="Leer Ezequiel en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Daniel</h4>
+                <p class="book-card__description">
+                  Historias de fidelidad a Dios en el exilio y visiones sobre
+                  reinos futuros.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Daniel"
+                  aria-label="Leer Daniel en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Oseas</h4>
+                <p class="book-card__description">
+                  Un mensaje de juicio y amor redentor de Dios a través de la
+                  vida del profeta.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Oseas"
+                  aria-label="Leer Oseas en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Joel</h4>
+                <p class="book-card__description">
+                  Un llamado al arrepentimiento y la promesa del derramamiento
+                  del Espíritu.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Joel"
+                  aria-label="Leer Joel en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Amós</h4>
+                <p class="book-card__description">
+                  Un mensaje de justicia social y juicio divino contra la
+                  opresión en Israel.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Amós"
+                  aria-label="Leer Amós en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Abdías</h4>
+                <p class="book-card__description">
+                  Una profecía de juicio contra la nación de Edom por su orgullo
+                  y maldad.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Abdías"
+                  aria-label="Leer Abdías en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Jonás</h4>
+                <p class="book-card__description">
+                  Un profeta reacio enviado a predicar arrepentimiento a la
+                  ciudad de Nínive.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Jonás"
+                  aria-label="Leer Jonás en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Miqueas</h4>
+                <p class="book-card__description">
+                  Profecías de juicio y la promesa de un gobernante justo de
+                  Belén.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Miqueas"
+                  aria-label="Leer Miqueas en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Nahúm</h4>
+                <p class="book-card__description">
+                  Una profecía sobre la caída de Nínive y el juicio de Dios
+                  sobre Asiria.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Nahúm"
+                  aria-label="Leer Nahúm en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Habacuc</h4>
+                <p class="book-card__description">
+                  Un diálogo sobre la justicia de Dios y la fe en medio de la
+                  maldad.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Habacuc"
+                  aria-label="Leer Habacuc en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Sofonías</h4>
+                <p class="book-card__description">
+                  El anuncio del "día del Señor", un día de juicio y
+                  purificación para las naciones.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Sofonías"
+                  aria-label="Leer Sofonías en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Hageo</h4>
+                <p class="book-card__description">
+                  Un llamado a reconstruir el Templo de Jerusalén después del
+                  exilio.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Hageo"
+                  aria-label="Leer Hageo en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Zacarías</h4>
+                <p class="book-card__description">
+                  Visiones proféticas que animan a la reconstrucción y anuncian
+                  al Mesías.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Zacarías"
+                  aria-label="Leer Zacarías en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Malaquías</h4>
+                <p class="book-card__description">
+                  Un llamado final al arrepentimiento y la fidelidad antes de la
+                  venida del Señor.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Malaquías"
+                  aria-label="Leer Malaquías en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+            </ul>
+          </article>
+          <article
+            class="books__testament"
+            id="new-testament"
+            aria-labelledby="new-testament-title"
+          >
+            <h3 id="new-testament-title" class="books__testament-title">
+              Nuevo Testamento
+            </h3>
+            <ul class="books__list">
+              <!-- Los elementos <li> de los libros del Nuevo Testamento -->
+              <li class="book-card">
+                <h4 class="book-card__title">Mateo</h4>
+                <p class="book-card__description">
+                  La vida, enseñanzas, muerte y resurrección de Jesús, el Mesías
+                  Rey.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Mateo"
+                  aria-label="Leer Mateo en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Marcos</h4>
+                <p class="book-card__description">
+                  El evangelio de acción que presenta a Jesús como el Siervo
+                  sufriente.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Marcos"
+                  aria-label="Leer Marcos en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Lucas</h4>
+                <p class="book-card__description">
+                  Una narración detallada de la vida de Jesús, enfatizando su
+                  humanidad y compasión.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Lucas"
+                  aria-label="Leer Lucas en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Juan</h4>
+                <p class="book-card__description">
+                  Presenta a Jesús como el Hijo de Dios, explorando profundas
+                  verdades teológicas.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Juan"
+                  aria-label="Leer Juan en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Hechos</h4>
+                <p class="book-card__description">
+                  La historia del nacimiento y la expansión de la iglesia
+                  primitiva a través del Espíritu Santo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Hechos"
+                  aria-label="Leer Hechos en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Romanos</h4>
+                <p class="book-card__description">
+                  Una exposición teológica fundamental de la justificación por
+                  la fe en Jesucristo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Romanos"
+                  aria-label="Leer Romanos en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">1 Corintios</h4>
+                <p class="book-card__description">
+                  Carta que aborda problemas y preguntas de la iglesia en
+                  Corinto.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="1 Corintios"
+                  aria-label="Leer 1 Corintios en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">2 Corintios</h4>
+                <p class="book-card__description">
+                  Defensa del ministerio apostólico de Pablo y el poder de Dios
+                  en la debilidad.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="2 Corintios"
+                  aria-label="Leer 2 Corintios en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Gálatas</h4>
+                <p class="book-card__description">
+                  Defensa de la salvación por la fe sola, no por las obras de la
+                  ley.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Gálatas"
+                  aria-label="Leer Gálatas en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Efesios</h4>
+                <p class="book-card__description">
+                  Explora la unidad de la iglesia en Cristo y la vida cristiana
+                  práctica.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Efesios"
+                  aria-label="Leer Efesios en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Filipenses</h4>
+                <p class="book-card__description">
+                  Una carta de gozo y aliento, escrita desde la prisión por el
+                  apóstol Pablo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Filipenses"
+                  aria-label="Leer Filipenses en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Colosenses</h4>
+                <p class="book-card__description">
+                  Exalta la supremacía de Cristo para combatir falsas
+                  enseñanzas.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Colosenses"
+                  aria-label="Leer Colosenses en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">1 Tesalonicenses</h4>
+                <p class="book-card__description">
+                  Instrucciones sobre la vida santa y la esperanza de la segunda
+                  venida de Cristo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="1 Tesalonicenses"
+                  aria-label="Leer 1 Tesalonicenses en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">2 Tesalonicenses</h4>
+                <p class="book-card__description">
+                  Aclaraciones sobre el fin de los tiempos y el llamado a la
+                  perseverancia.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="2 Tesalonicenses"
+                  aria-label="Leer 2 Tesalonicenses en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">1 Timoteo</h4>
+                <p class="book-card__description">
+                  Consejos pastorales a un joven líder sobre la doctrina y el
+                  orden en la iglesia.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="1 Timoteo"
+                  aria-label="Leer 1 Timoteo en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">2 Timoteo</h4>
+                <p class="book-card__description">
+                  Últimas palabras de Pablo, un llamado a la fidelidad y
+                  perseverancia en el ministerio.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="2 Timoteo"
+                  aria-label="Leer 2 Timoteo en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Tito</h4>
+                <p class="book-card__description">
+                  Instrucciones para establecer un liderazgo sólido y sana
+                  doctrina en las iglesias.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Tito"
+                  aria-label="Leer Tito en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Filemón</h4>
+                <p class="book-card__description">
+                  Una petición personal para perdonar y restaurar a un esclavo
+                  fugitivo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Filemón"
+                  aria-label="Leer Filemón en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Hebreos</h4>
+                <p class="book-card__description">
+                  Demuestra la superioridad de Jesucristo sobre el antiguo pacto
+                  y los ángeles.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Hebreos"
+                  aria-label="Leer Hebreos en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Santiago</h4>
+                <p class="book-card__description">
+                  Énfasis en una fe viva que se demuestra a través de las obras
+                  y la sabiduría práctica.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Santiago"
+                  aria-label="Leer Santiago en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">1 Pedro</h4>
+                <p class="book-card__description">
+                  Aliento a los creyentes que sufren persecución, recordándoles
+                  su esperanza en Cristo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="1 Pedro"
+                  aria-label="Leer 1 Pedro en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">2 Pedro</h4>
+                <p class="book-card__description">
+                  Advertencia contra los falsos maestros y un llamado a crecer
+                  en el conocimiento de Cristo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="2 Pedro"
+                  aria-label="Leer 2 Pedro en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">1 Juan</h4>
+                <p class="book-card__description">
+                  Asegura a los creyentes su salvación y les llama a vivir en
+                  amor y obediencia.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="1 Juan"
+                  aria-label="Leer 1 Juan en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">2 Juan</h4>
+                <p class="book-card__description">
+                  Una breve carta advirtiendo contra dar hospitalidad a los
+                  falsos maestros.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="2 Juan"
+                  aria-label="Leer 2 Juan en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">3 Juan</h4>
+                <p class="book-card__description">
+                  Elogio a Gayo por su hospitalidad y apoyo a los misioneros
+                  cristianos.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="3 Juan"
+                  aria-label="Leer 3 Juan en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Judas</h4>
+                <p class="book-card__description">
+                  Un llamado a contender por la fe y una advertencia contra los
+                  falsos maestros inmorales.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Judas"
+                  aria-label="Leer Judas en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+              <li class="book-card">
+                <h4 class="book-card__title">Apocalipsis</h4>
+                <p class="book-card__description">
+                  Una revelación profética de la victoria final de Cristo sobre
+                  el mal y la restauración de todo.
+                </p>
+                <a
+                  href="#"
+                  class="book-card__link"
+                  data-book="Apocalipsis"
+                  aria-label="Leer Apocalipsis en Bible Gateway"
+                  >Leer Libro</a
+                >
+              </li>
+            </ul>
+          </article>
+        </div>
+        <p class="books__attribution">
+          Contenido bíblico cortesía de
+          <a
+            href="https://www.biblegateway.com/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            >Bible Gateway</a
+          >.
+        </p>
+      </section>
+
+      <!-- Sección de Alabanzas -->
+      <section id="praises" class="praises" aria-labelledby="praises-title">
+        <div class="section-header">
+          <h2 id="praises-title" class="section-title">Alabanzas</h2>
+          <p class="section-subtitle">
+            Una selección de cánticos para elevar tu espíritu y conectar con
+            Dios.
+          </p>
+        </div>
+        <div class="card-grid">
+          <!-- Las tarjetas de alabanzas -->
+          <article class="card">
+            <h3 class="card__title">Milagroso, Abres Camino</h3>
+            <p class="card__description">
+              Una poderosa alabanza sobre la soberanía y el poder de Dios para
+              obrar milagros.
+            </p>
+            <a
+              href="https://youtu.be/uKPw2PSA53I?feature=shared"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Escuchar en YouTube</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">El Poder De Tu Amor</h3>
+            <p class="card__description">
+              Una hermosa alabanza que celebra la fuerza transformadora del amor
+              divino.
+            </p>
+            <a
+              href="https://youtu.be/fT5C_45oYbU?feature=shared"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Escuchar en YouTube</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">10000 Razones</h3>
+            <p class="card__description">
+              Una alabanza de gratitud que nos recuerda las infinitas razones
+              que tenemos para bendecir el nombre del Señor.
+            </p>
+            <a
+              href="https://youtu.be/-UuGyqlEVBI?feature=shared"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Escuchar en YouTube</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Supe Que Me Amabas</h3>
+            <p class="card__description">
+              Una conmovedora alabanza que habla del momento en que descubrimos
+              el amor incondicional de Dios.
+            </p>
+            <a
+              href="https://youtu.be/obji0jIDhZc?feature=shared"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Escuchar en YouTube</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Perfume A Tus Pies</h3>
+            <p class="card__description">
+              Una alabanza íntima de adoración que simboliza la entrega total a
+              Dios.
+            </p>
+            <a
+              href="https://youtu.be/RTyvh6qpQMY?feature=shared"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Escuchar en YouTube</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">De Regreso A Casa</h3>
+            <p class="card__description">
+              Una alabanza profundamente conmovedora que retrata el viaje
+              espiritual del hijo pródigo.
+            </p>
+            <a
+              href="https://youtu.be/bfr2C8T75UI?feature=shared"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Escuchar en YouTube</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- Sección de Sermones -->
+      <section id="sermons" class="sermons" aria-labelledby="sermons-title">
+        <div class="section-header">
+          <h2 id="sermons-title" class="section-title">
+            Sermones Inspiradores
+          </h2>
+          <p class="section-subtitle">
+            Enseñanzas profundas para fortalecer tu fe y entendimiento de la
+            Palabra.
+          </p>
+        </div>
+        <div class="card-grid">
+          <!-- Las tarjetas de sermones -->
+          <article class="card">
+            <h3 class="card__title">Todo por gracia</h3>
+            <p class="card__description">
+              Una exposición magistral sobre la gracia divina que trasciende
+              todo mérito humano. Spurgeon nos invita a contemplar la salvación
+              como el regalo más sublime que Dios otorga a la humanidad caída.
+            </p>
+            <a
+              href="https://www.spurgeongems.org/saog.pdf"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Leer Sermón</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">La Inmutabilidad de Dios</h3>
+            <p class="card__description">
+              Una profunda reflexión sobre el carácter inmutable de Dios basada
+              en Malaquías 3:6. Spurgeon nos lleva a contemplar la consoladora
+              verdad de que en un mundo cambiante, nuestro Dios permanece
+              eternamente fiel e invariable.
+            </p>
+            <a
+              href="https://www.spurgeongems.org/schs1.pdf"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Leer Sermón</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">La Perseverancia Final de los Santos</h3>
+            <p class="card__description">
+              Una exploración teológica profunda sobre la seguridad eterna del
+              creyente. Spurgeon aborda con sabiduría bíblica la doctrina que
+              garantiza que quienes son verdaderamente salvos perseverarán hasta
+              el fin por el poder de Dios.
+            </p>
+            <a
+              href="https://www.spurgeongems.org/schs1361.pdf"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Leer Sermón</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Cristo crucificado</h3>
+            <p class="card__description">
+              Un mensaje extraordinario sobre el corazón mismo del evangelio.
+              Spurgeon desentraña el significado profundo de la cruz, revelando
+              cómo la muerte de Cristo constituye el fundamento y la gloria
+              suprema de nuestra fe cristiana.
+            </p>
+            <a
+              href="https://www.spurgeongems.org/schs7-8.pdf"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Leer Sermón</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">La Oración Razonada</h3>
+            <p class="card__description">
+              Una enseñanza magistral sobre el arte sagrado de la oración.
+              Spurgeon nos guía a través de los principios fundamentales para
+              desarrollar una vida de oración efectiva, mostrando cómo
+              acercarnos al trono de la gracia con confianza y reverencia.
+            </p>
+            <a
+              href="https://www.spurgeongems.org/schs1018.pdf"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Leer Sermón</a
+            >
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">
+              El Verdadero Evangelio No Es Un Evangelio Encubierto
+            </h3>
+            <p class="card__description">
+              Una declaración audaz sobre la transparencia y gloria del
+              evangelio verdadero. Basado en 2 Corintios 4:3-4, Spurgeon
+              demuestra con elocuencia cómo el mensaje de salvación brilla con
+              claridad meridiana, siendo ocultado únicamente por la ceguera
+              espiritual.
+            </p>
+            <a
+              href="https://www.spurgeongems.org/schs1663.pdf"
+              class="card__link"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              >Leer Sermón</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- Sección "Acerca De" -->
+      <section id="about" class="about" aria-labelledby="about-title">
+        <div class="about__container">
+          <div class="about__content">
+            <h2 id="about-title" class="section-title section-title--light">
+              Sobre BiblioSynth
+            </h2>
+            <p>
+              <strong>BiblioSynth es tu portal bíblico digital</strong>
+              un proyecto nacido del deseo de acercar la sabiduría de la Palabra
+              de Dios a todos, utilizando la tecnología como puente. El objetivo
+              es ofrecer un espacio digital estético, intuitivo y gratuito donde
+              puedas explorar las Escrituras, encontrar alimento espiritual a
+              través de sermones y elevar tu corazón con alabanzas.
+            </p>
+            <p>
+              Creado con dedicación por <strong>Kernel Philosopher</strong>,
+              este sitio es una ofrenda de fe y trabajo. ¡Disfrútalo y que sea
+              de bendición para tu vida!
+            </p>
+          </div>
+          <div class="about__image-container">
+            <img
+              src="Media/index-about-icon.jpg"
+              alt="Logo de BiblioSynth, un libro abierto con un árbol de cruces doradas."
+              class="about__image"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="footer">
+      <p class="footer__copyright">
+        &copy; 2025 BiblioSynth. Todos los derechos reservados.
+      </p>
+      <p class="footer__credits">Diseñado con ❤️ por Kernel Philosopher.</p>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="Scripts/main.js"></script>
+  </body>
+</html>
